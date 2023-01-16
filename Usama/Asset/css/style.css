@@ -1,0 +1,26 @@
+/* .flowbox{
+    display: flex;
+    justify-content:flex-end;
+    align-items:center;
+    flex-direction: row;
+    flex-wrap:wrap;
+    padding: 3rem;
+    height: 200px;
+    background-color: brown;
+}
+.flowbox > .box {
+    padding: .8rem;
+    height: 3vh;
+    background-color: white;
+    border: .2rem solid #000;
+    margin: .8rem;
+} */
+*{
+    box-sizing: content-box;
+}
+header{
+    display: flex;
+    flex: 100%;
+    background-color: bisque;
+    padding: .6rem;
+}
