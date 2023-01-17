@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="StyleSheet" type="text/css" href="./Asset/css/style.css"/>
     <title>FlowLMS</title>
-    <script src=""></script>
 </head>
 <body>
     <div class="main">
@@ -22,38 +21,50 @@
     </div>
     <script>
         // window.alert("Hello World");
-        // console.log('Hellol World');
-        var a = "Chain";
-        var b = 'COVID';
-        let x  = 2;
-        let y = 3;
-        let z = null;
-        let ml = true;
-        let v = undefined;
-        let m = null;
-        a = 'Awwab'
-        document.getElementById("domReader").innerText = a;
-        x++;
-        console.log(x);
-        --y;
-        console.log(y);
+        console.log("Testing at console");
+        var holdData = null;
+        let localData = undefined;
+        const unchangeData = "Chain";
+        var numericData = 123.5;
+        var condition = true;
         // debugger;
-        console.log(a + ' ' + b + z);
-        console.log(x*y)
+        holdData = "Pakistan";
+        localData = "Suffyan";
+        // unchangeData = "Awwab";
+        console.log(localData + " " + holdData);
+        var alpha = "Javascript";
+        var a = 2;
+        var b = 40;
+        ++a;
+        b--;
+        a += 1;
+        console.log(a + " " + b);
 
-        if (z == true){
-            console.log("Ahsam is gay");
+        if (b >= 2){
+            console.log("This is a fact");
+            
         }else{
-            console.log("Ahsam is not a gay")
+            console.log("This not a fact");
+        }
+        
+
+        switch  (b){
+            case 2:
+                console.log("this is 2");
+            break;
+            case 3:
+                console.log("this is 3");
+                break;
+            default:
+                console.log("nothing found");
+                break;
         }
 
-        if (z == true){
-            console.log("Ahsam is gay");
-        }else if(z== null){
-            console.log("Ahsam is randi");
-        }
-        
-        
+        document.getElementById("domReader").innerText = unchangeData;
+
+        document.getElementById("domReader").style.color = "#fff";
+
+    
     </script>
 </body>
 </html>
