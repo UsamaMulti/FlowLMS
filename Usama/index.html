@@ -10,11 +10,13 @@
 <body>
     <div class="main">
         <header>
-            <p id ="domReader"></p>
+            <p id ="domReader">This is </p>
         </header>
         <nav></nav>
         <div class="row">
-            <div class="section"></div>
+            <div class="section">
+                <p id="loopBlock">Ahsam</p>
+            </div>
             <div class="side"></div>
         </div>
         <footer></footer>
@@ -60,10 +62,22 @@
                 break;
         }
 
-        document.getElementById("domReader").innerText = unchangeData;
+        document.getElementById("domReader").innerText += unchangeData;
 
         document.getElementById("domReader").style.color = "#fff";
 
+        // var i = 1 ;
+        // var loopBlock = document.getElementById("loopBlock");
+        // while (i < 99) {
+        //     // console.log(i)
+        //     loopBlock.innerHTML += i + "</br>";
+        //     // --i;
+        //     // i++;
+        //     i = i + 5;
+        // }
+        for(var j = 99; j >= 1;j--){
+            loopBlock.innerHTML += j + "-For" + "</br>";
+        }
     
     </script>
 </body>
