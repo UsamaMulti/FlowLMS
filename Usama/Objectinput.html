@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        .flexbox{
+            display: flex;
+            background-color: coral;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="flexbox">
+            <p id="getData"></p>
+
+        </div>
+        <input type="text" id="studentName"/>
+        <button onclick="submitName()">Data</button>
+        <button onclick="getLoad()">Save Data</button>
+        <button onclick="removeLoad()">Delete Data</button>
+        <button onclick="loadData()">Load Data</button>
+        <script>
+        var object = [];
+        function submitName() {
+            var getData = document.getElementById("getData");
+            var getStudentName = document.getElementById("studentName");
+            getData.innerHTML += "<h3>" + getStudentName.value + "</h3>";
+            getStudentName.value = "";
+        }
+        function getMouseData(){
+            var getStudentName = document.getElementById("studentName");
+            console.log(getStudentName.value);
+        }
+        function getLoad(params) {
+            var getStudentName = document.getElementById("studentName");
+            object.push(getStudentName.value);
+            getStudentName.value = "";
+                }
+        function removeLoad() {
+            var getStudentName = document.getElementById("studentName");
+            object.pop(getStudentName.value);
+        }
+        function loadData() {
+            console.log(object);
+        }
+    </script>
+    </body>
+</html>
