@@ -1,0 +1,15 @@
+.loginContainer{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+    border: .2rem solid #000;
+    width: 50%;
+}
+button{
+    background-color: blueviolet;
+    color: #fff;
+    padding: .5rem;
+    width: 8rem;
+    margin-top: .5rem;
+
+}
