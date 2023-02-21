@@ -1,59 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Pre-Render -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="StyleSheet" type="text/css" href="./Asset/css/style.css"/>
-    <title>FlowLMS</title>
-    <script src=""></script>
+    <title>Javascript</title>
+    <script src="./Asset/js/script.js"></script>
 </head>
 <body>
-    <div class="main">
-        <header>
-            <p id ="domReader"></p>
-        </header>
-        <nav></nav>
-        <div class="row">
-            <div class="section"></div>
-            <div class="side"></div>
-        </div>
-        <footer></footer>
-    </div>
+    <!-- Render-->
+    <p id="par">Javascript Class</p>
+    <input type="text" id="username"/>
+    <button>Get Name</button>
+
+
+    <!-- Post Render-->
     <script>
-        // window.alert("Hello World");
-        // console.log('Hellol World');
-        var a = "Chain";
-        var b = 'COVID';
-        let x  = 2;
-        let y = 3;
-        let z = null;
-        let ml = true;
-        let v = undefined;
-        let m = null;
-        a = 'Awwab'
-        document.getElementById("domReader").innerText = a;
-        x++;
-        console.log(x);
-        --y;
-        console.log(y);
-        // debugger;
-        console.log(a + ' ' + b + z);
-        console.log(x*y)
-
-        if (z == true){
-            console.log("Ahsam is gay");
-        }else{
-            console.log("Ahsam is not a gay")
+        // DRY
+        var par = document.getElementById("par");
+        //global 
+        var globalHolder =  "Usama";
+        var number = 12;
+        var decimal = 0.3;
+        var name = "Usama";
+        //local
+        let localHolder = "Hello World";
+        //Constant
+        const keyHolder = "1000625148930";
+        localHolder = "Sufyan";
+        //Object
+        var object = ["Chain",5.6,false,1000000000];
+        //Real || Whole -> Whole
+        // Object Array || dictionary Array
+        var person = { 
+            name : "Sufyan" , 
+            Qualities : ['Chudwana',69,9999999.3]
         }
+        object.push(56);
+        object.push("Usama");
+        //Document
+        par.innerHTML = object;
+        // Condition Statement
+        // if ( 1 === "1" || 0 == 0 ) {
+        //     //Code Block
+        //     par.innerHTML = localHolder;
+        // }else{
+        //     par.innerHTML = "Fahad";
+        // }
 
-        if (z == true){
-            console.log("Ahsam is gay");
-        }else if(z== null){
-            console.log("Ahsam is randi");
+        // if ( 1 === "1" && 0 == 0 ) {
+        //     //Code Block
+        //     par.innerHTML = localHolder;
+        // }else{
+        //     par.innerHTML = "Fahad";
+        // }
+        // Document Style Property
+        par.style.fontSize = "4rem";
+        // document.getElementById("par").append("<h2>Welcome</h2>");
+        //Window
+        // window.alert("China Pakistan");
+        // window.location.href = "";
+        function voidFun(name){
+            console.log(1+name);
         }
-        
-        
+        function rtunFun(name){
+            return 1+name;
+        }
+        var nameOne  = voidFun(3);
+        console.log(nameOne);
     </script>
 </body>
 </html>

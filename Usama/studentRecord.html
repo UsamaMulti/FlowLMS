@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record Keeping</title>
+    <style>
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            border: 0.1rem solid #000;
+            padding: 1rem;
+            width: 50%;
+        }
+        .form-group{
+            margin-top: 0.2rem;
+            margin-bottom: 0.3rem;
+        }
+        table{
+            padding: .3rem;
+            border: 2px solid #000;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table thead th{
+            background-color: coral;
+            text-transform: uppercase;
+            padding: .5rem;
+            color: #fff;
+        }
+        .req{
+            color: rgb(232, 59, 15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Html start-->
+    <div class="container">
+        <p class="req" id="msg"></p>
+        <div class="form-group">
+            <label>Student Name <span class="req">*</span></label></br>
+            <input id="studentName" name="studentName" type="text" tabindex="1"/>
+        </div>
+
+        <div class="form-group">
+            <label>Father Name</label></br>
+            <input id="fatherName" name="fatherName" type="text" tabindex="3"/>
+        </div>
+
+        <div class="form-group">
+            <label>Roll Number</label></br>
+            <input id="rollNumber" name="rollNumber" type="number" tabindex="2"/>
+        </div>
+        <div class="form-group">
+            <button onclick="submitStudent()" tabindex="4">Submit</button>
+            <button onclick="loadData()" tabindex="5">Load Data</button>
+        </div>
+
+        <table>
+            <thead>
+                <th>Sno</th>
+                <th>Student Name</th>
+                <th>Father Name</th>
+                <th>Roll Number</th>
+            </thead>
+            <tbody id="studentFetch">
+                <tr>
+                    <td colspan="4" style="text-align: center;padding-top: .2rem;">No Data </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- Html end-->
+    <script>
+        var txtStudentName = document.getElementById("studentName");
+        var txtFatherName = document.getElementById("fatherName");
+        var txtRollNumber = document.getElementById("rollNumber");
+        var studentTable = document.getElementById("studentFetch");
+        var msg = document.getElementById("msg");
+        var studentObject = [];
+        function submitStudent() {
+            let student = {
+            studentName : null,
+            fatherName : null,
+            rollNumber : null
+            }
+            if (txtStudentName.value === null || txtStudentName.value === '') {
+                msg.innerText = "Please enter your name";
+                return;
+            }else{
+                msg.innerText = "";
+            }
+            student.studentName = txtStudentName.value;
+            student.fatherName = txtFatherName.value;
+            student.rollNumber = txtRollNumber.value;
+            txtStudentName.value = '';
+            txtFatherName.value = '';
+            txtRollNumber.value = '';
+            studentObject.push(student);
+            localStorage.setItem("student",student);
+            console.log(studentObject);
+        }
+        function loadData() {
+            let sno = 1;
+            studentTable.innerHTML = "";
+            // studentObject.map(item => {
+            //     studentTable.innerHTML += "<tr>"
+            //          + "<td>"+ sno +"</td>"
+            //          + "<td>"+ item.studentName +"</td>"
+            //          + "<td>"+ item.fatherName +"</td>"
+            //          + "<td>"+ item.rollNumber +"</td>"
+            //          +"</tr>";
+            //     sno++;
+            // });
+            for (let index = 0; index < studentObject.length; index++) {
+                studentTable.innerHTML += "<tr>"
+                     + "<td>"+ sno +"</td>"
+                     + "<td>"+ studentObject[index].studentName +"</td>"
+                     + "<td>"+ studentObject[index].fatherName +"</td>"
+                     + "<td>"+ studentObject[index].rollNumber +"</td>"
+                     +"</tr>";
+                sno++;
+            }
+            console.table(localStorage.getItem("student"));
+        }
+    </script>
+</body>
+</html>
