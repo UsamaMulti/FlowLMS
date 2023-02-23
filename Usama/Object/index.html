@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Object Functions</title>
+</head>
+<body>
+    <p id="msg">Hello World</p>
+    <input type="text" id="name" />
+    <input type="number" id="number" />
+    <button onclick="submit()">Submit</button>
+    <button onclick="getData()">Get Data</button>
+    <button id="hide">Toggle my table</button>
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("#msg").toggle(1000);
+            });
+        });
+        var txtName = document.getElementById("name");
+        var txtNumber = document.getElementById("number");
+        var txtMsg = document.getElementById("msg");
+
+        
+
+        var holder = [];
+
+
+        function submit(){
+            let data = {
+                number :null,
+                name : null,
+            }
+            data.name = txtName.value;
+            data.number = multiseq(txtNumber.value);
+            holder.push(data);
+            let dataShitf = JSON.stringify(holder);
+            setStorage("Student",dataShitf);
+            txtMsg.innerHTML = "Sucessfully Created";
+        }
+
+        function getData(){
+            let dataShift = JSON.parse(getStorage("Student"));
+            txtMsg.innerHTML = "";
+            txtMsg.innerHTML += "<table border='2'><thead><th>Name</th><th>Number</th></thead><tbody>";
+            
+            for(let i=0; i < dataShift.length; i++){
+                txtMsg.innerHTML += "<tr>";
+                txtMsg.innerHTML += "<td>" + dataShift[i].name + "</td>";
+                txtMsg.innerHTML += "<td>" + dataShift[i].number + "</td>";
+                txtMsg.innerHTML += "</tr>";
+            }
+            txtMsg.innerHTML += "</tbody></table>";
+        }
+
+        function multiseq(number){
+            return (parseInt(number) * 2) + "-" + "ZXR";
+        }
+        function setStorage(key,value){
+            try{
+                localStorage.setItem(key,value);
+            }catch(ex){
+                return false;
+            }
+            return true;
+        }
+
+        function getStorage(key){
+            try{
+                return localStorage.getItem(key);
+            }catch(ex){
+                return null;
+            }
+        }
+        function deleteStorage(key){
+            localStorage.removeItem(key);
+        }
+    </script>
+</body>
+</html>
