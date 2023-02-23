@@ -4,9 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>Document</title>
+    <style>
+        .col1{
+            padding: 1rem;
+            background-color: #f4f4f4;
+        }
+        table{
+            padding: 1rem;
+            margin-left: 5rem;
+        }
+        table thead th{
+            border: 2px solid #000;
+            padding: 1rem;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="col1">
+        <div>
+            <form id="submitForm">
+                <input type="text" placeholder="Product Name" name="productName">
+                <input type="text" placeholder="Price Name" name="productPrice">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <table>
+            <thead>
+                <th>Sno</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </thead>
+            <tbody id="tableAddition">
+            </tbody>
+        </table>
+        <button id="loadData">Load</button>
+    </div>
+    <div class="col1">
+        <div id="loadajax"></div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var sno = 0;
+            $("#submitForm").submit(function(event) {
+                sno++;
+                let productName = $('input[name=productName]');
+                let productPrice = $('input[name=productPrice]');
+                // $('#tableAddition').html(null);
+                $('#tableAddition').append(`
+                <tr>
+                    <td>`+ sno +`<td/>
+                    <td>`+ productName.val() +`<td/>
+                    <td>`+ productPrice.val()+`<td/>
+                    <td><button id='delRow'>X</button><td/>
+                `);
+                productName.val(null);
+                productPrice.val(null);
+                //Stop submission
+                event.preventDefault();
+            })
+            //Custom Handler
+            $('#tableAddition').on("click","#delRow",function () {
+                $(this).closest("tr").remove();
+            });
+            $("#loadData").click(function() {
+                $("#loadajax").load("file.txt");
+            });
+        });
+    </script>
 </body>
 </html>
