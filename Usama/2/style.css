@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap');
+:root{
+    --red : #e74c3c;
+    --black : #0d0d0d;
+    --white : #f4f4f4;
+    --yellow : #f1c40f;
+    --glbPaddding : 1rem;
+    --deviceWidth: 
+}
+body{
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+header{
+    background-color: var(--red);
+    padding: var(--glbPaddding);
+    text-align: center;
+ }
+nav{
+    background-color: var(--black);
+    padding: var(--glbPaddding);
+    text-align: center;
+    color: var(--white);
+    
+}
+aside{
+    background-color: var(--white);
+    position: relative;
+    padding: var(--glbPaddding) ;
+    text-align: center;
+    width: calc(100% - 76%);
+    /* border: 2px solid var(--black); */
+    float: left;
+}
+section{
+    background-color: var(--white);
+    position: relative;
+    padding: var(--glbPaddding);
+    text-align: center;
+    width: calc(100% - 30.5%);
+    /* border: 2px solid var(--black); */
+    float: right;
+}
+footer{
+    background-color: var(--black);
+    clear: both;
+    padding: var(--glbPaddding);
+    text-align: center;
+    color: var(--white);
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: var(--yellow);
+}
+.box::before {
+    content: "AD BOX";
+}
