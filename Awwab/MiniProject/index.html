@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .main{
+            margin-left: 45rem;
+        }
+        .btns{
+            border: 2px solid black;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            margin-top: 2rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <button class="main" id="mainbtn">Register</button>
+    <div class="btns" id="btn">
+        <button onclick="tutor()">Register as a Tutor</button>
+        <button>Register as a Student</button>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#mainbtn").click(function(){
+                $("#btn").toggle(1000);
+            });
+        });
+
+        function tutor(){
+            window.location.href='./tutor.html';
+        }
+
+
+
+
+
+        </script>
+
+</body>
+</html>

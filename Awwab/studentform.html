@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        body{
+            background-color: rgb(107, 88, 65);
+        }
+        .formBody{
+            margin: auto;
+            width: 50%;
+           
+            margin-top: 2.2%;
+            background-color: tomato;
+            border-radius: 1rem;
+           
+
+        }
+        .formBody .form-group{
+            width: 50%;
+            margin: auto;
+            align-items: center;
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+        .form-group input[type=text]{
+            width: 95%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            border: none;
+        }
+        .submit{
+            margin: auto;  
+        width: 18%;
+        padding: 0.8rem 2rem;
+    
+    }
+    .submit button{
+        padding: 1rem 3rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: black;
+        color: tomato;
+        transition: 0.5s;
+    }
+    .submit button:hover{
+        background-color: tomato;
+        color: white;
+        transition: 0.5s;
+        border: 1px solid black;
+        
+    }
+    </style>
+</head>
+<body>
+
+    <div class="formBody">
+        <div class="form">
+        <div class="form-group">
+            <label>Your Name:</label><br>
+            <input type="text" name="studentName" id="studentName" placeholder="Please Enter Your Name">
+        </div>
+        <div class="form-group">
+            <label>Your Father's Name:</label><br>
+            <input type="text" name="fatherName" id="fatherName" placeholder="Please Enter Your Father's Name">
+        </div>
+        <div class="form-group">
+            <label>Blood Group:</label><br>
+            <input type="text" name="bloodGroup" id="bloodGroup" placeholder="Please Enter Your Blood Group">
+        </div>
+        <div class="form-group">
+            <label>Postal Code:</label><br>
+            <input type="text" name="postalCode" id="postalCode" placeholder="Please Enter Postal Code">
+        </div>
+        <div class="form-group">
+            <label>Roll Number:</label><br>
+            <input type="text" name="rollNumber" id="rollNumber" placeholder="Please Enter Your Roll Number">
+        </div>
+        <div class="submit">
+            <button onclick="studentData">Submit</button>
+        </div>
+        </div>
+    </div>
+    <script>
+        var inStudentName = document.getElementById("studentName");
+        var infatherName = document.getElementById("fatherName");
+        var inBloodGroup = document.getElementById("bloodGroup");
+        var inPostalCode = document.getElementById("postalCode");
+        var inRollNumber = document.getElementById("rollNumber");
+
+        var dataObject = [];
+        function studentData(){
+            let Data = {
+                studentName : null,
+                fatherName : null,
+                bloodGroup : null,
+                postalCode : null,
+                rollNumber : null
+
+            }
+            Data.studentName = inStudentName.value;
+            Data.fatherName = infatherName.value;
+            Data.bloodGroup = inBloodGroup.value;
+            Data.postalCode = inPostalCode.value;
+            Data.rollNumber = inRollNumber.value;
+            /*
+            inStudentName.value = "";
+            infatherName.value = "";
+            inBloodGroup.value = "";
+            inPostalCode.value = "";
+            inRollNumber.value = "";
+
+            */
+            dataObject.push(Data);
+            console.log(dataObject);
+
+        }
+
+
+    </script>
+    
+</body>
+</html>
