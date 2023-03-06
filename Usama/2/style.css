@@ -59,3 +59,7 @@ footer{
 .box::before {
     content: "AD BOX";
 }
+input,select {
+    border : 2px solid var(--black);
+    font-size: large;
+}

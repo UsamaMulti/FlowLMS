@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./style.css"/>
 </head>
-<body>
+<body onload="load()">
     <div class="container">
 
     </div>
@@ -15,9 +15,24 @@
     <header>Header</header>
     <nav>Navigation</nav>
     <aside>
-        <div class="box"></div>
+        <div class="box" id="box"></div>
     </aside>
-    <section>Section</section>
+    <section>
+        <input type="text" id="name" placeholder="Enter Your Name" value="Usama"/>
+
+        <select onchange="selectList()" id="selectFD">
+            <option value="null">Select Item</option>
+            <optio>Suffyan</option>
+            <option>Ahsam</option>
+            <option>cHina</option>
+        </select>
+
+        <input type="submit" value="Enter" onclick="SelectData()">
+        <input type="checkbox">
+        <input type="radio">
+        <input type="range">
+        <input type="color" id="color">
+    </section>
     <footer>Copyright &copy; 2023</footer>
     <!-- CSS Grid-->
     <div class="header"></div>
@@ -25,5 +40,38 @@
     <div class="aside"></div>
     <div class="section"></div>
     <div class="footer"></div>
+    <script>
+        function SelectData() {
+            let value = document.getElementById("color").value;
+            // alert(value);
+            document.getElementById("box").style.backgroundColor = value;
+            localStorage.setItem("color",value);
+        }
+        function load() {
+            document.getElementById("box").style.backgroundColor = localStorage.getItem("color");
+        }
+        let ob = [];
+        let ob1 = [];
+        function selectList() {
+            let selectFD = document.getElementById("selectFD").value;
+            // console.log(selectFD);
+            switch (selectFD.toUpperCase()) {
+                case "SUFFYAN":
+                    console.log("Chuttu");
+                    break;
+                case "AHSAM":
+                    console.log("Gandu");
+                    break;
+                case "CHINA":
+                    console.log("Bharwa");
+                    break;
+
+                default:
+                    console.log("Dump");
+                    break;
+            }
+        }
+
+    </script>
 </body>
 </html>
