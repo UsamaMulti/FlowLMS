@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(192, 69, 69);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+  }
+  .loginBox{
+    background-color: white;
+    margin: auto;
+    width: 60%;
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 4px 4px black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:0rem 1rem;
+    margin-top: 12rem;
+   
+  }
+  .details{
+    padding: 1rem 1rem;
+    width: 45%;
+  }
+  .details .heading{
+ 
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .form{
+    width: 45%;
+    padding: 2rem 1rem;
+  }
+  .formGroup{
+    padding-top: 1rem;
+    margin-left: 2rem;
+  }
+ 
+  #email_error, #pass_error{
+    font-size: 1rem;
+    color: #C62828;
+    background-color: rgba(255,0,0,0.1);
+    width: 70%;
+    border-radius: .5rem;
+    padding: .5rem;
+    display: none;
+    margin-top: .5rem;
+  }
+  .formGroup label{
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .formGroup span{
+    color: red;
+  }
+  .formGroup input{
+    width: 80%;
+    border-radius: .5rem;
+    padding: .5rem;
+  
+  }
+  .form button{
+    padding: .5rem 2rem;
+    border-radius: .5rem;
+    border: none;
+    font-size: 1rem;
+    background-color: rgb(192, 69, 69) ;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    transition: .5s;
+  }
+  .form button:hover{
+    background-color:rgb(158, 79, 79) ;
+    color: white;
+    transition: .5s;
+
+  }

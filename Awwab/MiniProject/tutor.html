@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #show{
+            border: 2px solid black;
+            padding: 1rem 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Yourself!</h1>
+    
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" name="" id="name">
+        </div>
+        <div class="form-group">
+            <label for="">CNIC</label>
+            <input type="text" name="" id="cnic">
+        </div>
+        <div class="form-group">
+            <label for="">Address</label>
+            <input type="text" name="" id="address">
+        </div>
+        <div class="form-group">
+            <label for="">Fees</label>
+            <input type="text" name="" id="fees">
+        </div>
+        <div class="form-group">
+         <button onclick="submit()">Maths</button>
+        </div>
+     
+    
+    <script>
+        
+        var txtName = document.getElementById("name");
+        var txtCnic = document.getElementById("cnic");
+        var txtAddress = document.getElementById("address");
+        var txtFees = document.getElementById("fees");
+        
+        var dataHold = [];
+        var details = {
+                name: "",
+                cnic: "",
+                address: "",
+                fees: "",
+            }
+        
+
+
+        function submit(){
+           
+           
+            details.name = txtName.value;
+            details.cnic = txtCnic.value;
+            details.address = txtAddress.value;
+            details.fees = txtFees.value;
+            dataHold.push(details);
+            console.log(dataHold);
+           
+           
+            
+
+        }
+        
+    </script>
+</body>
+</html>
