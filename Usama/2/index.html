@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body onload="load()">
     <div class="container">
@@ -32,6 +33,9 @@
         <input type="radio">
         <input type="range">
         <input type="color" id="color">
+        <button class="toogle">Toogle</button>
+        <button class="hide">Hide</button>
+        <button class="show">Show</button>
     </section>
     <footer>Copyright &copy; 2023</footer>
     <!-- CSS Grid-->
@@ -40,6 +44,21 @@
     <div class="aside"></div>
     <div class="section"></div>
     <div class="footer"></div>
+    <script>
+        $(document).ready(function(){
+            $('.hide').click(function(){
+                $('header').slideUp(1000);
+            });
+
+            $('.show').click(function(){
+                $('header').slideDown(500);
+            });
+
+            $('.toogle').click(function(){
+                $('header').slideToggle(1500);
+            });
+        });
+    </script>
     <script>
         function SelectData() {
             let value = document.getElementById("color").value;
