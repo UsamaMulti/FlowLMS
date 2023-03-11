@@ -28,7 +28,7 @@
             <option>cHina</option>
         </select>
 
-        <input type="submit" value="Enter" onclick="SelectData()">
+        <input type="submit" name="data" value="Enter" onclick="SelectData()">
         <input type="checkbox">
         <input type="radio">
         <input type="range">
@@ -36,6 +36,7 @@
         <button class="toogle">Toogle</button>
         <button class="hide">Hide</button>
         <button class="show">Show</button>
+        <button class="data">data</button>
     </section>
     <footer>Copyright &copy; 2023</footer>
     <!-- CSS Grid-->
@@ -46,6 +47,7 @@
     <div class="footer"></div>
     <script>
         $(document).ready(function(){
+
             $('.hide').click(function(){
                 $('header').slideUp(1000);
             });
@@ -57,6 +59,12 @@
             $('.toogle').click(function(){
                 $('header').slideToggle(1500);
             });
+
+            $('.data').click(function(){
+                let datapom = prompt("What is your name?");
+                $('input[name=data]').val(datapom);
+            });
+
         });
     </script>
     <script>
